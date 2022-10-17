@@ -316,7 +316,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="ibox mb20 ">
+				<div class="ibox mb20 hidden">
 					<div class="ibox-title uk-flex-middle uk-flex uk-flex-space-between">
 						<h5 class="choose-image" style="cursor: pointer;margin:0;">Template hiển thị Website</h5>
 					</div>
