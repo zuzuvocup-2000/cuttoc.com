@@ -18,6 +18,7 @@ define('API_WIDGET', 'http://widget.htweb.vn');
 define('CURRENCY', '$');
 define('LINK_ICON', 'https://museomix.be/doc/Icons-ET-LineIcons.html');
 define('HTSEARCH', 'tim-kiem');
+define('HTBOOK', 'booking');
 define('HTCONTACT', 'contact-us');
 define('HTMAP', 'contact-map');
 

@@ -1,3 +1,14 @@
+$(document).ready(function(){
+    $('.mobile-menu-bar').on('click', function(){
+        var navigation = $('.navigation');
+
+        navigation.slideToggle();
+
+
+        return false;
+    });
+});
+
 $(document).on('click','.submit-form-contact', function(){
 	let _this = $(this)
 	let fullname = $('.va-fullname-contact').val()

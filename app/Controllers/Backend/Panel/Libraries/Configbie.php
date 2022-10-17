@@ -11,8 +11,8 @@ class ConfigBie{
 	public function panel(){
 		$data['locate'] =  array(
 			0 => '-- Chọn vị trí Panel --',
-            // 'home' => 'Trang chủ',
-            'footer' => 'Chân trang',
+            'home' => 'Trang chủ',
+            // 'footer' => 'Chân trang',
             // 'article' => 'Bài viết',
             // 'aside_home' => 'Aside trang chủ',
             // 'aside_art' => 'Aside bài viết',
@@ -24,8 +24,8 @@ class ConfigBie{
             // 'product_catalogue' => 'Danh mục Sản phẩm',
             'article' => 'Bài viết',
             'article_catalogue' => 'Danh mục Bài viết',
-            // 'media' => 'Dự án',
-            // 'media_catalogue' => 'Danh mục Dự án',
+            'media' => 'Dự án',
+            'media_catalogue' => 'Danh mục Dự án',
 		);
 
 		return $data;

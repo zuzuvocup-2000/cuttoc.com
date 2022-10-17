@@ -69,13 +69,14 @@
         </div>
 		<?php echo view('frontend/homepage/common/schema') ?>
 		<?php echo view('frontend/homepage/common/header') ?>
+		<?php echo view('frontend/homepage/common/offcanvas') ?>
+		
 		<div class="page-wrapper">
 			<main class="main">
 				<?php echo view((isset($template)) ? $template : '') ?>
 			</main>
 		</div>
 		<?php echo view('frontend/homepage/common/footer') ?>
-		<?php /*echo view('frontend/homepage/common/offcanvas')*/ ?>
 		<?php echo view('backend/dashboard/common/notification') ?>
 		<!-- Tao Widget -->
 		<?php
