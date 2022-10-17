@@ -1,0 +1,41 @@
+CRITICAL - 2022-10-02 01:31:33 --> The framework needs the following extension(s) installed and loaded: IMAGICK.
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 54.
+ 1 SYSTEMPATH/Images/Handlers/ImageMagickHandler.php(47): CodeIgniter\Exceptions\FrameworkException::forMissingExtension()
+ 2 SYSTEMPATH/Config/Services.php(337): CodeIgniter\Images\Handlers\ImageMagickHandler->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(194): CodeIgniter\Config\Services::image()
+ 4 SYSTEMPATH/Config/Services.php(330): CodeIgniter\Config\BaseService::getSharedInstance()
+ 5 APPPATH/Controllers/Ajax/Slide.php(80): CodeIgniter\Config\Services::image()
+ 6 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\Ajax\Slide->open_modal()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-02 01:31:49 --> The framework needs the following extension(s) installed and loaded: IMAGICK.
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 54.
+ 1 SYSTEMPATH/Images/Handlers/ImageMagickHandler.php(47): CodeIgniter\Exceptions\FrameworkException::forMissingExtension()
+ 2 SYSTEMPATH/Config/Services.php(337): CodeIgniter\Images\Handlers\ImageMagickHandler->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(194): CodeIgniter\Config\Services::image()
+ 4 SYSTEMPATH/Config/Services.php(330): CodeIgniter\Config\BaseService::getSharedInstance()
+ 5 APPPATH/Controllers/Ajax/Slide.php(80): CodeIgniter\Config\Services::image()
+ 6 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\Ajax\Slide->open_modal()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-02 01:32:43 --> The framework needs the following extension(s) installed and loaded: IMAGICK.
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 54.
+ 1 SYSTEMPATH/Images/Handlers/ImageMagickHandler.php(47): CodeIgniter\Exceptions\FrameworkException::forMissingExtension()
+ 2 SYSTEMPATH/Config/Services.php(337): CodeIgniter\Images\Handlers\ImageMagickHandler->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(194): CodeIgniter\Config\Services::image()
+ 4 SYSTEMPATH/Config/Services.php(330): CodeIgniter\Config\BaseService::getSharedInstance()
+ 5 APPPATH/Controllers/Ajax/Slide.php(80): CodeIgniter\Config\Services::image()
+ 6 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\Ajax\Slide->open_modal()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-02 04:52:09 --> count(): Parameter must be an array or an object that implements Countable
+in APPPATH/Controllers/Ajax/Frontend/Auth.php on line 278.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Ajax/Frontend/Auth.php(278): count()
+ 3 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\Ajax\Frontend\Auth->send_otp_forgot()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
