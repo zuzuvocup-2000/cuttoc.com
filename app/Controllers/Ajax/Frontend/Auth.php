@@ -238,6 +238,7 @@ class Auth extends FrontendController{
 		 		$store['salt'] = $salt;
 		 		$store['created_at'] = $this->currentTime;
 				$store['publish'] = 1;
+
 				$insertid = $this->AutoloadModel->_insert(['table' => 'member','data' => $store]);
 				if($insertid > 0){
 					$this->AutoloadModel->_delete([

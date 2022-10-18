@@ -294,7 +294,8 @@
 								<a title="service-item" >
 									<div class="uk-flex uk-flex-middle" >
 										<div class="thumb img-cover img-zoomin">
-											<img src="resources/img/commit-2.png" alt="">
+											<img src="resources/img/logo.jpg" alt="">
+											<div class="thumb-info "><?php echo $general['camket_block_'.$i.'_number'] ?></div>
 										</div>
 										<div class="service-content">
 											<div class="title"><?php echo $general['camket_block_'.$i.'_title'] ?></div>

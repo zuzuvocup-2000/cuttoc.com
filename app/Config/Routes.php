@@ -53,6 +53,7 @@ $routes->get('logout'.HTSUFFIX, 'Frontend\Auth\Auth::logout',['filter' => 'auth_
 $routes->get('thuong-hieu'.HTSUFFIX, 'Frontend\Homepage\Router::list/$1');
 $routes->get('thuong-hieu/trang-([0-9]+)'.HTSUFFIX, 'Frontend\Homepage\Router::list/$1/$2');
 
+$routes->get(HTBOOK.HTSUFFIX, 'Frontend\Booking\Booking::index/$1');
 $routes->get(HTSEARCH.HTSUFFIX, 'Frontend\Homepage\Router::search/$1');
 $routes->get(HTSEARCH.'/trang-([0-9]+)'.HTSUFFIX, 'Frontend\Homepage\Router::search/$1/$2');
 $routes->get(HTSEARCH.'/trang-([0-9]+)/([a-zA-Z0-9-]+)'.HTSUFFIX, 'Frontend\Homepage\Router::search/$1/$2/$3');

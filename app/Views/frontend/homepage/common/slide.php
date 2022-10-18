@@ -38,17 +38,17 @@
     </div>
     <div class="form-booking">
         <div class="panel-head">
-            <div class="title">Đặt lịch giữ chỗ chỉ 30 giây</div>
-            <div class="sub-title">Cắt xong trả tiền, hủy lịch không sao</div>
+            <div class="title"><?php echo $language == 'vi' ? 'Đặt lịch giữ chỗ chỉ 30 giây' : 'Book your reservation for only 30 seconds' ?></div>
+            <div class="sub-title"><?php echo $language == 'vi' ? 'Cắt xong trả tiền, hủy lịch không sao' : "After cutting the payment, it's okay to cancel the schedule" ?></div>
         </div>
         <div class="panel-body">
-            <form action="" method="">
+            <form action="<?php echo HTBOOK.HTSUFFIX ?>" method="get">
                 <div class="uk-flex uk-flex-middle">
                     <div class="form-input">
-                        <input placeholder="Nhập SDT để đặt lịch" type="text" class="my-input" value="">
+                        <input placeholder="<?php echo $language == 'vi' ? 'Nhập SDT để đặt lịch' : 'Enter your phone number to make an appointment' ?>" type="text" class="my-input" value="" name="phone">
                     </div>
                     <div class="btn-booking">
-                        <button type="button" name="button">ĐẶT <span>LỊCH </span>NGAY</button>
+                        <button type="submit"><?php echo $language == 'vi' ? 'ĐẶT LỊCH NGAY' : 'BOOKING NOW' ?></button>
                     </div>
                 </div>
             </form>

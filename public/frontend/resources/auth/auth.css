@@ -34,10 +34,10 @@ body{
 .user-profile .sidebar .wrapper .list-menu li:last-child {
     border-bottom: 0;
 }
-.user-profile .content-right {
+/*.user-profile .content-right {
     padding: 0;
     padding-right: 15px;
-}
+}*/
 .user-profile .content-right #user-application .item-application {
     text-align: center;
     border: 1px solid #ababab;

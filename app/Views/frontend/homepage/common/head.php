@@ -33,12 +33,13 @@
         .ser_box .bgser_icon i{
             color: <?php echo $general['homepage_color'] ?> !important;
         }
+        .user-profile .content-right .item-user .title .icon-edit,
         .btn-danger,
         .user-profile .content-right #user-application .item-application:hover,
         .user-profile .content-right .item-user .title .icon-edit,
         .team_boxes_border .team_content .follow_team_social li a,
         .btn-outline-white{
-            border-color: <?php echo $general['homepage_color'] ?>38 !important;
+            border-color: <?php echo $general['homepage_color'] ?> !important;
         }
         .btn-danger,
         .user-profile .sidebar .wrapper .list-menu li.active,
@@ -55,7 +56,7 @@
         }
 
         .btn-login button.disabled{
-            background-color: <?php echo $general['homepage_color'] ?>60 !important;
+            background-color: <?php echo $general['homepage_color'] ?> !important;
             cursor: disabled;
         }
 

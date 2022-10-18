@@ -235,7 +235,7 @@ p, h1, h2, h3, h4, h5, h6{
 /*panel-footer*/
 
 .panel-footer{
-    background: #000;
+    background: #000 !important;
     color: #fff;
     padding-top: 35px;
     
@@ -2616,4 +2616,223 @@ p, h1, h2, h3, h4, h5, h6{
   font-size: 18px;
   line-height: 1.2;
   color: #111;
+}
+
+.page-home .panel-commit .panel-body .service-list .service-item .thumb{
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    position: relative;
+}
+.page-home .panel-commit .panel-body .service-list .service-item .thumb-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    font-weight: 700;
+    color: #ffcc33;
+}
+
+.login-member-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    text-align: center;
+    color: #000;
+    border: 1px solid #000;
+    line-height: 45px;
+    position: relative;
+    font-size: 25px;
+}
+
+.list-action-member {
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    top: 65px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+    transition: opacity 300ms ease 0s;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 100;
+    overflow: hidden;
+    right: 0;
+    width: 200px;
+}
+
+.tamgiac {
+    display: block;
+    width: 24px;
+    height: 8px;
+    position: absolute;
+    top: -8px;
+}
+
+.list-action-member li:not(:last-child) {
+    border-bottom: 1px solid rgba(22, 24, 35, 0.12);
+}
+
+.list-action-member li a {
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    transition: all ease-in-out 0.2s;
+}
+
+.list-action-member li a svg {
+    margin-right: 10px;
+}
+
+.login-member-profile:hover .list-action-member {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main-content {
+    margin: 50px 0 !important;
+}
+
+.hidden{
+    display: none;
+}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 0 !important; 
+}
+
+.panel-body {
+     padding: 0 !important; 
+}
+.panel-body:after,
+.panel-body:before{
+    display: none;
+}
+
+/* css-by-minhbrots2 */
+.booking-page{
+    background-color: #eee;
+}
+.booking-page .booking-container{
+    max-width: 500px;
+    margin: auto;
+}
+.booking-page .booking-container .heading-1{
+    padding: 10px 0;
+    background: #f7f7f7;
+    font-size: 18px;
+    color: #111111;
+    font-weight: 600;
+}
+.booking-page .booking-container .main-booking{
+    padding: 30px 15px;
+    font-weight: 300;
+    color: #000;
+    background: #fff;
+}
+.booking-page .booking-container .main-booking .booking-box{
+    margin-bottom: 20px;
+}
+.booking-page .booking-container .main-booking .booking-box .title{
+    font-weight: 500;
+    color: #000000;
+    background: #fff;
+    font-size: 23px;
+    line-height: 35px;
+    margin-bottom: 15px;
+}
+.booking-page .booking-container .main-booking .booking-box .form-field:not(:last-child){
+    margin-bottom: 10px;
+}
+.booking-page .booking-container .main-booking .booking-box .form-field label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.booking-page .booking-container .main-booking .booking-box .form-field label span{
+    color: red;
+}
+.booking-page .booking-container .main-booking .booking-box .form-field input{
+    width: 100%;
+    height: 40px;
+    border: #1bb394 1px solid;
+    outline: none;
+    padding: 10px;
+}
+.booking-page .booking-container .main-booking .booking-box .select2{
+    width: 100% !important;
+}
+.booking-page .booking-container .main-booking .booking-box .select2-selection--single{
+    border: #1bb394 1px solid;
+    outline: none;
+    padding: 10px;
+    height: 40px;
+}
+.booking-page .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 21px;
+}
+.booking-page .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 6px;
+    right: 5px;
+}
+.booking-page .btn-done{
+    width: 100%;
+    background: #e8e8e8;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 48px;
+    margin-bottom: 20px;
+}
+.booking-page .booking-container .description{
+    font-weight: 300;
+    font-size: 14px;
+}
+.booking-page  .booking-box .time{
+    position: relative;
+}
+.booking-page  .booking-box .time .owl-nav .owl-prev{
+    position: absolute;
+    left: -5%;
+    top: 40%;
+    font-size: 50px;
+    color: #b9b7b7;
+}
+.booking-page  .booking-box .time .owl-nav .owl-next{
+    position: absolute;
+    right: -5%;
+    top: 40%;
+    font-size: 50px;
+    color: #b9b7b7;
+}
+.booking-page  .booking-box .time .time-item .box-time-item {
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.choose-time{
+    background: #fc3 !important;
+}
+/* reponsive */
+@media( max-width: 415px ){
+    #calendar-days{
+        display: none !important;
+    }
+    #calendar-wrapper{
+        display: block;
+    }
+    #calendar #navigation-wrapper button {
+        font-size: 30px;
+        width: 30px;
+    }
 }

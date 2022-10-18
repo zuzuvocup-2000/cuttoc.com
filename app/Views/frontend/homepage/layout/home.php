@@ -34,8 +34,9 @@
 		<meta name="twitter:title" content="<?php echo isset($meta_title)?htmlspecialchars($meta_title):'';?>" />
 		<meta name="twitter:description" content="<?php echo (isset($meta_description) && !empty($meta_description))?htmlspecialchars($meta_description):'';?>" />
 		<meta name="twitter:image" content="<?php echo (isset($meta_image) && !empty($meta_image))?$meta_image:base_url((isset($general['homepage_logo'])) ? $general['homepage_logo']  : '');?>" />
-
-
+		<?php if(isset($home) && $home == 'detail_user'){ ?>
+			<link rel="stylesheet" href="public/frontend/resources/library/css/bootstrap.min.css">
+		<?php } ?>
 		<?php
 			$check_css = false;
 			foreach ($system as $key => $value) {

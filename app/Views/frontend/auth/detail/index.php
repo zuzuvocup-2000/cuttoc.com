@@ -2,10 +2,10 @@
 <script src="public/frontend/resources/uikit/js/components/sticky.min.js"></script>
 <div class="main-content">
     <div class="user-profile">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 hidden-xs hidden-sm sidebar sidebar-left" >
-                    <div class="wrapper" data-uk-sticky="{top: 60, boundary: '#footer'}">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-grid-medium uk-clearfix">
+                <div class="uk-width-medium-1-4 uk-visible-large sidebar sidebar-left" >
+                    <div class="wrapper" data-uk-sticky="{top: 60, boundary: 'footer'}">
                         <div class="title clearfix">
                             Xin Chào, <?php echo $user['fullname'] ?>
                         </div>
@@ -13,7 +13,7 @@
                             <li data-id="user-info">
                                 <a>Thông tin cá nhân</a>
                             </li>
-                            <li data-id="user-application">
+                            <li data-id="user-application " class="uk-hidden">
                                 <a>Khuyến mãi</a>
                             </li>
                             <li data-id="user-password">
@@ -22,7 +22,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-9 col-xs-12 content-right">
+                <div class="uk-width-medium-3-4 uk-width-1-1 content-right">
                     <div class="item-user" id="user-info">
                         <div class="title">
                             Thông tin cá nhân
@@ -154,7 +154,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item-user" id="user-application">
+                    <div class="item-user uk-hidden" id="user-application">
                         <div class="title">Khuyến mãi</div>
                         <div class="content clearfix">
                             <?php if(isset($promotion) && is_array($promotion) && count($promotion)){ ?>
