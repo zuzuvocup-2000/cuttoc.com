@@ -49,6 +49,14 @@ class ConfigBie{
 				'map_link' => array('type' => 'text', 'label' => 'Link Bản đồ'),
 			),
 		);
+		$data['booking'] =  array(
+			'label' => 'Booking',
+			'description' => 'Cấu hình đầy đủ thông tin liên hệ giúp khách hàng dễ dàng tiếp cận với dịch vụ của bạn',
+			'value' => array(
+				'service' => array('type' => 'textarea', 'label' => 'Dịch vụ', 'attention' => 'Mỗi dịch vụ cách nhau dấu `|`'),
+				'time' => array('type' => 'textarea', 'label' => 'Thời gian đặt lịch', 'attention' => 'Mỗi khoảng thời gian cách nhau dấu `|`'),
+			),
+		);
 		$data['camket'] =  array(
 			'label' => 'Cam kết',
 			'description' => 'Cấu hình đầy đủ thông tin liên hệ giúp khách hàng dễ dàng tiếp cận với dịch vụ của bạn',

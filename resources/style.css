@@ -2717,6 +2717,12 @@ ol, ul {
 .booking-page{
     background-color: #eee;
 }
+
+.form-control,
+.booking-container {
+    font-family:  Oswald;
+}
+ 
 .booking-page .booking-container{
     max-width: 500px;
     margin: auto;
@@ -2835,4 +2841,23 @@ ol, ul {
         font-size: 30px;
         width: 30px;
     }
+}
+
+.language-list {
+    margin-right: 15px;
+}
+
+.language-list > * {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #eee;
+}
+
+.language-list img {
+    max-width: 30px;
+    margin-right: 10px;
+}
+
+.language-list span {
+    color: #000;
 }

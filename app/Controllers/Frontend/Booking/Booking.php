@@ -10,69 +10,63 @@ class Booking extends FrontendController{
         $this->data = [];
         $this->data['module'] = 'booking';
         $this->data['language'] = $this->currentLanguage();
+        $this->auth = (isset($_COOKIE[AUTH.'member']) && $_COOKIE[AUTH.'member'] != '' ? json_decode($_COOKIE[AUTH.'member'],TRUE) : []);
 	}
 
 	public function index($id = 0, $page = 1){
-
-        $this->data['template'] = 'frontend/booking/booking/index';
-        $this->data['general'] = $this->general;
-        return view('frontend/homepage/layout/home', $this->data);
-	}
-
-    public function datlich($id = 0, $page = 1){
-        helper(['mypagination']);
-        $id = (int)$id;
         $session = session();
-        $module_extract = explode("_", $this->data['module']);
-        $this->data['meta_title'] = 'Đặt lịch tư vấn';
-        $this->data['meta_description'] = 'Đặt lịch tư vấn';
-        $this->data['meta_image'] = !empty( $this->data['detailCatalogue']['image'])?base_url( $this->data['detailCatalogue']['image']):'';
-
-        if(!isset($this->data['canonical']) || empty($this->data['canonical'])){
-            $this->data['canonical'] = 'lien-he'.HTSUFFIX;
+        if(isset($this->auth) && is_array($this->auth) && count($this->auth)){
+            $this->data['user'] = $this->AutoloadModel->_get_where([
+                'select' => 'fullname, id, address, phone, image, gender, birthday, email, cityid, districtid, wardid, description, facebook_link, instagram_link',
+                'table' => 'member',
+                'where' => [
+                    'publish' => 1,
+                    'deleted_at' => 0,
+                    'id' => $this->auth['id']
+                ]
+            ]);
         }
 
         if($this->request->getMethod() == 'post'){
             $validate = $this->validation();
             if ($this->validate($validate['validate'], $validate['errorValidate'])){
                 $store = [
-                    'email' => $this->request->getPost('email'),
                     'fullname' => $this->request->getPost('fullname'),
                     'phone' => $this->request->getPost('phone'),
-                    'address' => $this->request->getPost('address'),
-                    'info' => json_encode($this->request->getPost('info')),
-                    'content' => 'Khách hàng đã gửi tờ khai y tế vui lòng click để xem chi tiết',
-                    'title' => 'Gửi tờ khai y tế',
-                    'contactid' => $this->contact_id_generator(),
+                    'date' => date('Y-m-d', strtotime($this->request->getPost('date'))),
+                    'time' => $this->request->getPost('time'),
+                    'services' => $this->request->getPost('services'),
+                    'bookingid' => $this->booking_id_generator(),
                     'deleted_at' => 0,
                     'created_at' => $this->currentTime
                 ];
                 $insert = $this->AutoloadModel->_insert([
-                    'table' => 'contact',
+                    'table' => 'booking',
                     'data' => $store
                 ]);
 
                 if($insert > 0){
-                    $session->setFlashdata('message-success', 'Đặt lịch tư vấn Thành Công!');
-                    header('location:'.BASE_URL.'dat-lich-tu-van'.HTSUFFIX);die();
+                    $session->setFlashdata('message-success', ($this->data['language'] == 'vi' ? 'Đặt lịch thành công!' : 'Appointment successful!'));
+                    header('location:'.BASE_URL.HTBOOK.HTSUFFIX);die();
                 }else{
-                    $session->setFlashdata('message-danger', 'Có lỗi xảy ra xin vui lòng thử lại!');
-                    header('location:'.BASE_URL.'dat-lich-tu-van'.HTSUFFIX);die();
+                    $session->setFlashdata('message-danger', ($this->data['language'] == 'vi' ? 'Có lỗi xảy ra xin vui lòng thử lại!' : 'An error occurred, please try again!'));
+                    header('location:'.BASE_URL.HTBOOK.HTSUFFIX);die();
                 }
             }else{
                 $this->data['validate'] = $this->validator->listErrors();
             }
         }
 
-        $this->data['template'] = 'frontend/contact/contact/datlich';
+        $this->data['template'] = 'frontend/booking/booking/index';
+        $this->data['canonical'] = HTBOOK.HTSUFFIX;
         $this->data['general'] = $this->general;
         return view('frontend/homepage/layout/home', $this->data);
-    }
+	}
 
-    private function contact_id_generator(){
+    private function booking_id_generator(){
         $order = $this->AutoloadModel->_get_where([
             'select' => 'id',
-            'table' => 'contact',
+            'table' => 'booking',
             'order_by' => 'id desc'
         ]);
         $lastId = 0;
@@ -89,17 +83,25 @@ class Booking extends FrontendController{
         $validate = [
             'fullname' => 'required',
             'phone' => 'required',
-            'address' => 'required',
+            'services' => 'required',
+            'date' => 'required',
+            'time' => 'required',
         ];
         $errorValidate = [
             'fullname' => [
-                'required' => 'Bạn phải nhập vào trường họ và tên'
+                'required' => ($this->data['language'] == 'vi' ? 'Bạn phải nhập vào trường họ và tên' : "You must enter the first and last name field")
             ],
             'phone' => [
-                'required' => 'Bạn phải nhập vào trường số điện thoại',
+                'required' => ($this->data['language'] == 'vi' ? 'Bạn phải nhập vào trường số điện thoại' : "You must enter the phone number field"),
             ],
-            'address' => [
-                'required' => 'Bạn phải nhập vào trường địa chỉ',
+            'services' => [
+                'required' => ($this->data['language'] == 'vi' ? 'Bạn phải chọn dịch vụ' : "You must choose the service"),
+            ],
+            'date' => [
+                'required' => ($this->data['language'] == 'vi' ? 'Bạn phải chọn ngày đặt lịch' : "You must choose a date for your appointment"),
+            ],
+            'time' => [
+                'required' => ($this->data['language'] == 'vi' ? 'Bạn phải chọn giờ đặt lịch' : "You must choose a time for your appointment"),
             ],
         ];
         return [
@@ -107,5 +109,4 @@ class Booking extends FrontendController{
             'errorValidate' => $errorValidate,
         ];
     }
-
 }

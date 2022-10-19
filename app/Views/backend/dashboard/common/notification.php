@@ -26,7 +26,7 @@
         });
         var shortCutFunction = '<?php echo (isset($flash['flag']) && $flash['flag'] == 0) ? 'success' : 'error'; ?>';
         var msg = '<?php echo $flash['message']; ?>';
-        var title = 'Thông báo từ hệ thống';
+        var title = '<?php echo (isset($language) && $language == 'en' ? 'Notice from the system' : 'Thông báo từ hệ thống') ?>';
         var $showDuration = 400;
         var $hideDuration = 1000;
         var $timeOut = 7000;
