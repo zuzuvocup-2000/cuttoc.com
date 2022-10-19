@@ -358,7 +358,7 @@ class Catalogue extends BaseController{
 		$languageList = $this->AutoloadModel->_get_where([
 			'select' => 'id, canonical',
 			'table' => 'language',
-			'where' => ['publish' => 1,'deleted_at' => 0,'canonical !=' =>  $this->currentLanguage()]
+			'where' => ['publish' => 1,'deleted_at' => 0,'canonical !=' =>  $this->currentLanguage(),]
 		], TRUE);
 
 
@@ -366,7 +366,7 @@ class Catalogue extends BaseController{
 		$i = 3;
 		if(isset($languageList) && is_array($languageList) && count($languageList)){
 			foreach($languageList as $key => $val){
-				$select = $select.'(SELECT COUNT(objectid) FROM page_translate WHERE page_translate.objectid = tb1.id AND page_translate.language = "'.$val['canonical'].'") as '.$val['canonical'].'_detect, ';
+				$select = $select.'(SELECT COUNT(objectid) FROM page_translate WHERE page_translate.objectid = tb1.id AND page_translate.language = "'.$val['canonical'].'" AND page_translate.module =  "'.$this->data['module'].'") as '.$val['canonical'].'_detect, ';
 				$i++;
 			}
 		}

@@ -59,7 +59,7 @@
                 }, 1000)
             });
             var menuChildren = $('.canvas-menu .menu-item-has-children, .site-canvas .dropdown-categories .menu-item-has-children');
-            menuChildren.append('<span class="menu-dropdown"><i class="klbth-icon-down-open-big"></i></span>');
+            menuChildren.append('<span class="menu-dropdown"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>');
             $('.canvas-menu .menu-item-has-children .menu-dropdown, .site-canvas .dropdown-categories .menu-item-has-children .menu-dropdown').on('click', function(e) {
                 e.preventDefault();
                 var link = $(this);
